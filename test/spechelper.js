@@ -1,0 +1,1 @@
+global.basePath = __dirname + '/..';

@@ -1,0 +1,36 @@
+{
+  "name": "machinezone-challenges-traffic-light",
+  "version": "0.0.1",
+  "description": "challenges from machinezone",
+  "main": "server.js",
+  "scripts": {
+    "check": "./node_modules/grunt-cli/bin/grunt check",
+    "test": "mocha -b test/*.spec.js"
+  },
+  "keywords": [
+    "machinezone, challenges, traffic-light"
+  ],
+  "author": "Anton Plotnikov",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.4.3",
+    "log4js": "~0.6.24",
+    "express": "^4.4.5",
+    "request": "~2.58.x",
+    "lodash": "3.10.x",
+    "standard-error": "1.1.x",
+    "node-uuid": "1.4.x",
+    "when": "~3.6.x"
+  },
+  "devDependencies": {
+    "mocha": "~1.21.x",
+    "sinon": "~1.10.x",
+    "should": "~4.0.x",
+    "supertest": "~0.13.x",
+    "grunt": "~0.4.x",
+    "grunt-cli": "~0.1.x",
+    "grunt-mocha-test": "~0.9.x",
+    "grunt-jscs-checker": "~0.4.3",
+    "grunt-contrib-jshint": "~0.10.x"
+  }
+}
