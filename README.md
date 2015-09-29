@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/Dilan/machinezone.svg?branch=master)](https://travis-ci.org/Dilan/machinezone)
 MachineZone traffic-light challenge
 ===================================
 
