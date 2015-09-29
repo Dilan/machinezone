@@ -40,7 +40,7 @@ var validateRoute = {
             throw new InvalidError('Property [sequence] is missed.');
         }
         if (typeof core.storage.findById(sequence) === 'undefined') {
-            throw new InvalidError('The sequence isn\'t found');
+            throw new InvalidError('The sequence is not found');
         }
         if (typeof observation === 'undefined') {
             throw new InvalidError('Property [observation] is missed.');
@@ -91,6 +91,9 @@ module.exports.express = function(core) {
     });
 
     // routes
+    /*
+     curl -X POST -H "Content-Type: application/json" -d '' http://127.0.0.1:3001/sequence/create
+    */
     app.post('/sequence/create', function(req, res) {
         core.storage.create().then(function(sequence) {
             res.json({
@@ -112,8 +115,9 @@ module.exports.express = function(core) {
      curl -X POST -H "Content-Type: application/json" -d '{ "sequence":"b78fbeb6-12bb-4e92-8ecf-59c5ab062fa9", "observation":{"color":"green","numbers":["1110111", "0011101"] } }' http://127.0.0.1:3001/sequence/add
     */
     app.post('/sequence/add', function(req, res) {
-        validateRoute.sequenceAdd(core, req).
-            then(function() {
+        return when(true).then(function() {
+            return validateRoute.sequenceAdd(core, req);
+        }).then(function() {
                 var sequence = req.body['sequence'],
                     observation = req.body['observation'],
                     color = observation['color'],
